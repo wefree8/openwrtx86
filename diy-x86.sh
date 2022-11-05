@@ -19,21 +19,21 @@ sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall;luci' 
 # sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.4/g' ./target/linux/x86/Makefile
 
 # 修改openwrt登陆地址,把下面的192.168.8.1修改成你想要的就可以了
-sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.0.8/g' package/base-files/files/bin/config_generate
 
 # 修改主机名字，把Unicorn修改你喜欢的就行（不能纯数字或者使用中文）
-sed -i "/uci commit system/i\uci set system.@system[0].hostname='Unicorn'" package/lean/default-settings/files/zzz-default-settings
-sed -i "s/hostname='OpenWrt'/hostname='Unicorn'/g" ./package/base-files/files/bin/config_generate
+sed -i "/uci commit system/i\uci set system.@system[0].hostname='Freeco'" package/lean/default-settings/files/zzz-default-settings
+sed -i "s/hostname='OpenWrt'/hostname='Freeco'/g" ./package/base-files/files/bin/config_generate
 
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
-svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt package/luci-app-aliyundrive-webdav
+# svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt package/luci-app-aliyundrive-webdav
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser package/luci-app-filebrowser
 
 # git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
 # git clone https://github.com/sbwml/openwrt-alist.git package/openwrt-alist
 # git clone https://github.com/jerrykuku/luci-app-vssr.git  package/luci-app-vssr
 # git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
-git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
+# git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
 
 # luci-app-argon-config
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
