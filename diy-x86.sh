@@ -12,8 +12,9 @@
 
 # 添加源
 sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
-sed -i '$a src-git xiaorouji https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
-sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall;luci' feeds.conf.default
+# sed -i '$a src-git xiaorouji https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
+# sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall;luci' feeds.conf.default
+sed -i '$a src-git bypass https://github.com/kiddin9/openwrt-bypass' feeds.conf.default
 
 # 切换内核版本
 # sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.4/g' ./target/linux/x86/Makefile
@@ -25,7 +26,7 @@ sed -i 's/192.168.1.1/192.168.0.8/g' package/base-files/files/bin/config_generat
 sed -i "/uci commit system/i\uci set system.@system[0].hostname='Freeco'" package/lean/default-settings/files/zzz-default-settings
 sed -i "s/hostname='OpenWrt'/hostname='Freeco'/g" ./package/base-files/files/bin/config_generate
 
-svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
+# svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 # svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt package/luci-app-aliyundrive-webdav
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-filebrowser package/luci-app-filebrowser
 
@@ -88,9 +89,9 @@ sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/c
 sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/model/cbi/v2ray_server/*.lua
 sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/view/v2ray_server/*.htm
 # wireguard
-sed -i 's/status/vpn/g' feeds/luci/applications/luci-app-wireguard/luasrc/controller/wireguard.lua
-sed -i 's/92/2/g' feeds/luci/applications/luci-app-wireguard/luasrc/controller/wireguard.lua
+# sed -i 's/status/vpn/g' feeds/luci/applications/luci-app-wireguard/luasrc/controller/wireguard.lua
+# sed -i 's/92/2/g' feeds/luci/applications/luci-app-wireguard/luasrc/controller/wireguard.lua
 
 
 # 修改插件名字
-sed -i 's/WireGuard 状态/WireGuard/g' feeds/luci/applications/luci-app-wireguard/po/zh-cn/wireguard.po
+# sed -i 's/WireGuard 状态/WireGuard/g' feeds/luci/applications/luci-app-wireguard/po/zh-cn/wireguard.po
