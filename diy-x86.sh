@@ -14,7 +14,7 @@
 sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
 # sed -i '$a src-git xiaorouji https://github.com/xiaorouji/openwrt-passwall' feeds.conf.default
 # sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall;luci' feeds.conf.default
-sed -i '$a src-git bypass https://github.com/kiddin9/openwrt-bypass' feeds.conf.default
+sed -i '$a src-git bypass https://github.com/haiibo/openwrt-packages' feeds.conf.default
 
 # 切换内核版本
 # sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.4/g' ./target/linux/x86/Makefile
